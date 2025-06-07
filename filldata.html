@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Checkout | Perfumeora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      color: #e91e63;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .product-info {
+      display: flex;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .product-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+    
+    .product-details h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e91e63;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    
+    .row {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .col {
+      flex: 1;
+    }
+    
+    .btn {
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: #c2185b;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #e91e63;
+      text-decoration: none;
+    }
+    
+    @media (max-width: 600px) {
+      .row {
+        flex-direction: column;
+        gap: 0;
+      }
+      
+      .product-info {
+        flex-direction: column;
+      }
+      
+      .product-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Delivery Details</h1>
+    
+    
+    
+    <form id="deliveryForm">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="address">Delivery Address</label>
+        <textarea id="address" rows="3" required></textarea>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="pincode">Pincode</label>
+            <input type="text" id="pincode" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" required>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" required>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" required>
+              <option value="">Select Country</option>
+              <option value="India" selected>India</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="instructions">Delivery Instructions (Optional)</label>
+        <textarea id="instructions" rows="2" placeholder="e.g., Leave at front door if I'm not home"></textarea>
+      </div>
+      
+      <button type="submit" class="btn">Confirm Order</button>
+    </form>
+    
+    <a onclick="history.back()" class="back-link">← Back to product</a>
+  </div>
+
+  <script>
+    document.getElementById('deliveryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form values
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      
+      // In a real app, you would send this data to your server
+      // and process the order payment, etc.
+      
+      // Show confirmation alert
+      alert(`Order confirmed!\n\nThank you, ${name}!\nYour order will be delivered to:\n${address}\n\nWe'll contact you at ${phone} for any updates.`);
+      
+      // In a real app, you would redirect to order confirmation page
+      // window.location.href = 'order-confirmation.html';
+    });
+  </script>
+</body>
+</html>

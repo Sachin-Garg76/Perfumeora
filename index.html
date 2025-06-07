@@ -1,0 +1,400 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>your_perfume_store</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      body {
+        flex-direction: column;
+        align-items: center;
+      }
+      /* Navbar styles */
+      nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #222;
+        font-size: 16px;
+        padding: 15px;
+        position: relative;
+      }
+
+      .nav_entity {
+        color: white;
+        text-decoration: none;
+        margin-left: 15px;
+        margin-top: 1rem;
+        position: relative;
+        font-size: 20px;
+        padding: 8px 12px;
+      }
+      .nav_entity:hover {
+        color: rgb(255, 0, 162);
+      }
+      #logo {
+        color: white;
+        position: relative;
+        left: -20rem;
+        margin-top: 1rem;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        flex-shrink: 0;
+      }
+      #logo i {
+        font-size: 2.5rem;
+        color: #ff3366;
+        transition: transform 0.4s ease;
+      }
+      #logo:hover {
+        color: #ffb3c6;
+      }
+      #logo:hover i {
+        transform: rotate(25deg) scale(1.15);
+      }
+
+      /* User profile section */
+      .user-profile {
+        position: absolute;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+      
+      .user-profile i {
+        margin-right: 8px;
+        font-size: 1.2rem;
+      }
+      
+      .user-name {
+        font-weight: bold;
+        color: #ff66c4;
+      }
+
+      .hero {
+        padding: 60px 30px;
+        text-align: center;
+        background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #111;
+      }
+
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 5px 5px 10px black;
+      }
+
+      .card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+      .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      
+      .card-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #ff3366;
+        margin-bottom: 10px;
+      }
+
+      .card-text {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .card button {
+        background-color: #ff66c4;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .card button:hover {
+        background-color: #e255ae;
+      }
+
+      /* Footer Styles */
+      footer {
+        background-color: #222;
+        color: white;
+        padding: 40px 0;
+        margin-top: 40px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-column h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #ff66c4;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-column ul li a {
+        color: #ddd;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-column ul li a:hover {
+        color: #ff66c4;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        color: white;
+        font-size: 20px;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: #ff66c4;
+      }
+
+      .copyright {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+        color: #aaa;
+        font-size: 14px;
+      }
+
+      @media (max-width: 600px) {
+        .hero h1 {
+          font-size: 28px;
+        }
+
+        .card img {
+          height: 200px;
+        }
+
+        .footer-container {
+          grid-template-columns: 1fr;
+        }
+        
+        #logo {
+          left: 0;
+          margin-right: auto;
+        }
+        
+        .user-profile {
+          position: static;
+          margin-top: 10px;
+          justify-content: flex-end;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h6 id="logo"><i class="fa-solid fa-spray-can-sparkles" aria-hidden="true"></i> Perfumora</h6>
+      <a href="index.html" class="nav_entity"
+        ><i class="fa-solid fa-house"></i> Home</a
+      >
+      <a href="perfumes.html" class="nav_entity">
+        <i class="fa-solid fa-spray-can-sparkles"></i> Perfume's</a
+      >
+      <a href="about.html" class="nav_entity"
+        ><i class="fa-solid fa-users"></i>About_Us</a
+      >
+      <a href="login.html" class="nav_entity" id="loginLink"
+        ><i class="fa-solid fa-arrow-right-to-bracket"></i> Log_in..  </a
+      >
+      
+    </nav>
+    <section class="hero">
+      <h1>Explore Our Premium Perfume Collection</h1>
+      <div class="card-container">
+        <div class="card">
+          <img src="perfume1.jpg" alt="Perfume 1" />
+          <div class="card-body">
+            <div class="card-title">Rose Blush</div>
+            <div class="card-price">₹1,299</div>
+            <div class="card-text">
+              A romantic fragrance with floral notes and a touch of musk.
+            </div>
+            <button onclick="location.href='product1.html'">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="perfume2.jpg" alt="Perfume 2" />
+          <div class="card-body">
+            <div class="card-title">Ocean Breeze</div>
+            <div class="card-price">₹1,499</div>
+            <div class="card-text">
+              Fresh aquatic scent perfect for daily wear.
+            </div>
+            <button onclick="location.href='product2.html'">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="perfume3.jpg" alt="Perfume 3" />
+          <div class="card-body">
+            <div class="card-title">Mystic Oud</div>
+            <div class="card-price">₹2,499</div>
+            <div class="card-text">
+              An exotic blend of oud and oriental spices.
+            </div>
+            <button onclick="location.href='product3.html'">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="perfume4.jpg" alt="Perfume 4" />
+          <div class="card-body">
+            <div class="card-title">Citrus Burst</div>
+            <div class="card-price">₹999</div>
+            <div class="card-text">
+              Energetic citrus notes with a fresh twist for summer.
+            </div>
+            <button onclick="location.href='product4.html'">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="perfume5.jpg" alt="Perfume 5" />
+          <div class="card-body">
+            <div class="card-title">Amber Night</div>
+            <div class="card-price">₹1,799</div>
+            <div class="card-text">
+              Warm amber tones with hints of vanilla and musk.
+            </div>
+            <button onclick="location.href='product5.html'">Buy Now</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="perfume6.jpg" alt="Perfume 6" />
+          <div class="card-body">
+            <div class="card-title">Woody Spice</div>
+            <div class="card-price">₹1,899</div>
+            <div class="card-text">
+              A bold woody scent with cinnamon and clove essence.
+            </div>
+            <button onclick="location.href='product6.html'">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Perfumora</h3>
+          <p>Your destination for premium fragrances that captivate the senses and leave lasting impressions.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="perfumes.html">Perfumes</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="login.html">My Account</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Fragrance St, Mumbai</li>
+            <li><i class="fas fa-phone"></i> +91 9876543210</li>
+            <li><i class="fas fa-envelope"></i> info@perfumora.com</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 Perfumora. All Rights Reserved.</p>
+      </div>
+    </footer>
+    
+    
+  </body>
+</html>

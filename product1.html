@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfumeora | Rose Blush</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      max-width: 800px;
+      width: 90%;
+      display: flex;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .card img {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 20px;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .card-price {
+      color: #e91e63;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #c2185b;
+    }
+
+    @media screen and (max-width: 768px) {
+      .card {
+        flex-direction: column;
+      }
+
+      .card img, .card-body {
+        width: 100%;
+      }
+    }
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #555;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-button:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-button">&larr; Back</a>
+
+  <div class="card">
+    <img src="perfume1.jpg" alt="Rose Blush Perfume">
+    <div class="card-body">
+      <div class="card-title">Rose Blush</div>
+      <div class="card-price">₹1,299</div>
+      <div class="card-text">
+        Experience the delicate allure of "Rose Blush", a signature fragrance that blends the soft scent of blooming roses with subtle hints of musk and spring freshness. Perfect for daily wear, this long-lasting perfume embodies elegance and charm. Top notes include fresh rose petals, middle notes of jasmine and lily, and a warm musky base.
+      </div>
+      <button onclick="location.href='filldata.html'">Buy Now</button>
+    </div>
+  </div>
+
+  
+
+</body>
+</html>

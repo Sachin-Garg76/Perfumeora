@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Perfumeora | Woody Spice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #f3ede8, #e0d3c2);
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #4e342e;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-button:hover {
+      background-color: #3e2723;
+    }
+
+    .card {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+    }
+
+    .card img {
+      width: 50%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 30px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: #3e2723;
+      margin-bottom: 15px;
+    }
+
+    .card-price {
+      color: #5d4037;
+      font-size: 22px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .card-text {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    button {
+      background-color: #6d4c41;
+      color: #fff;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      align-self: flex-start;
+    }
+
+    button:hover {
+      background-color: #4e342e;
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        padding: 20px;
+      }
+
+      .card {
+        flex-direction: column;
+      }
+
+      .card img, .card-body {
+        width: 100%;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-button">&larr; Back</a>
+
+  <div class="card">
+    <img src="perfume6.jpg" alt="Woody Spice Perfume">
+    <div class="card-body">
+      <div class="card-title">Woody Spice</div>
+      <div class="card-price">₹1,899</div>
+      <div class="card-text">
+        <strong>Woody Spice</strong> is a bold, masculine fragrance designed for those who command attention. With rich cinnamon warmth, aromatic clove, and deep woody base notes, it embodies strength and confidence. Ideal for evening wear or cold weather, this scent is a signature of timeless sophistication and charm.
+      </div>
+      <button onclick="location.href='filldata.html'">Buy Now</button>
+    </div>
+  </div>
+
+ 
+</body>
+</html>
